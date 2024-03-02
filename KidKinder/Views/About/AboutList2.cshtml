@@ -1,0 +1,19 @@
+﻿@model List<KidKinder.Entities.About>
+
+<div class="row pt-2 pb-4">
+
+    <div class="col-6 col-md-4">
+        <img class="img-fluid rounded" src="@Model[0].SmallImageUrl" alt="" />
+    </div>
+
+    <div class="col-6 col-md-8">
+        <ul class="list-inline m-0">
+            @foreach (var item in Model)
+            {
+                <li class="py-2 border-top border-bottom">
+                    <i class="fa fa-check text-primary mr-3"></i>@item.Title
+                </li>
+            }
+        </ul>
+    </div>
+</div>
