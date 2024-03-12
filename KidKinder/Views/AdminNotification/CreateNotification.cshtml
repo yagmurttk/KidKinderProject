@@ -1,0 +1,31 @@
+﻿﻿@model KidKinder.Entities.Notification
+
+@{
+    ViewBag.Title = "CreateNotification";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h5>Yeni Bildirim Ekleme Sayfası</h5>
+    </div>
+    <div class="card-block">
+        <form class="form-material" method="post">
+            <div class="form-group form-default">
+                <input type="text" name="Title" placeholder="Başlık" class="form-control">
+            </div>
+            <div class="form-group form-default">
+                <input type="text" name="ImageUrl" placeholder="Resim" class="form-control">
+            </div>
+            <div class="form-group form-default">
+                <input type="date" name="NotificationDate" placeholder="Tarih" class="form-control">
+            </div>
+
+            <div class="form-group form-default">
+                <textarea name="Description" placeholder="Açıklama" cols="7" rows="10" class="form-control"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-outline-primary">Bildirimi Kaydet</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+﻿﻿@model List<KidKinder.Entities.Branch>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="card">
+    <div class="card-header">
+        <h5>Branş Listesi</h5>
+        <span>Branş ile ilgili ekleme, silme, güncelle gibi işlemleri aşağıdan gerçekleştirebilirsiniz.</span>
+    </div>
+    <div class="card-block table-border-style">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Branş Adı</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        count++;
+                    <tr>
+                        <th scope="row">@count</th>
+                        <td>@item.Name</td>
+                        <td><a href="/AdminBranch/UpdateBranch/@item.BranchId" class="btn btn-outline-success">Güncelle</a></td>
+                        <td><a href="/AdminBranch/RemoveBranch/@item.BranchId" class="btn btn-outline-danger">Sil</a></td>
+                    </tr>
+                    }
+
+                </tbody>
+            </table>
+            <a href="/AdminBranch/CreateBranch/" class="btn btn-outline-primary">Yeni Branş Ekle</a>
+
+        </div>
+    </div>
+</div>

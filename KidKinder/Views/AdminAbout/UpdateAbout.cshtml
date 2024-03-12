@@ -1,0 +1,34 @@
+﻿﻿@model KidKinder.Entities.About
+
+@{
+    ViewBag.Title = "UpdateAbout";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h5>Hakkımızda Güncelleme Sayfası</h5>
+    </div>
+    <div class="card-block">
+        <form class="form-material" method="post">
+            <input type="hidden" name="AboutId" value="@Model.AboutId" />
+            <div class="form-group form-default">
+                <input type="text" name="Header" value="@Model.Header" placeholder="Başlık" class="form-control">
+            </div>
+            <div class="form-group form-default">
+                <input type="text" name="Title" value="@Model.Title" placeholder="Alt Başlık" class="form-control">
+            </div>
+            <div class="form-group form-default">
+                <input type="text" name="SmallImageUrl" value="@Model.SmallImageUrl" placeholder="Küçük Resim" class="form-control">
+            </div>
+            <div class="form-group form-default">
+                <input type="text" name="BigImageUrl" value="@Model.BigImageUrl" placeholder="Büyük Resim" class="form-control">
+            </div>
+            <div class="form-group form-default">
+                <textarea name="Description" placeholder="Açıklama" cols="7" rows="10" class="form-control">@Model.Description</textarea>
+            </div>
+
+            <button type="submit" class="btn btn-outline-primary">Hakkımızda Güncelle</button>
+        </form>
+    </div>
+</div>

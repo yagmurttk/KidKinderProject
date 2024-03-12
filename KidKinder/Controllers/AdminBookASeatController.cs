@@ -53,7 +53,7 @@ namespace KidKinder.Controllers
             value.Name = bookASeat.Name;
             value.Mail = bookASeat.Mail;
             context.SaveChanges();
-            return RedirectToAction("AdminBookASeat");
+            return RedirectToAction("Index");
         }
     }
 }

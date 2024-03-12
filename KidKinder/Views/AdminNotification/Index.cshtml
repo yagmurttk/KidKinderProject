@@ -1,0 +1,47 @@
+﻿﻿@model List<KidKinder.Entities.Notification>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="card">
+    <div class="card-header">
+        <h5>Bildirim Bilgileri</h5>
+        <span>Bildirim ile ilgili ekleme, silme, güncelle gibi işlemleri aşağıdan gerçekleştirebilirsiniz.</span>
+    </div>
+    <div class="card-block table-border-style">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Başlık</th>
+                        <th>İkon</th>
+                        <th>Açıklama</th>
+                        <th>Tarih</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        count++;
+                        <tr>
+                            <th scope="row">@count</th>
+                            <td>@item.Title</td>
+                            <td>@item.ImageUrl</td>
+                            <td>@item.Description</td>
+                            <td>@item.NotificationDate.ToShortDateString()</td>
+                            <td><a href="/AdminNotification/RemoveNotification/@item.NotificationId" class="btn btn-outline-danger">Sil</a></td>
+                            <td><a href="/AdminNotification/UpdateNotification/@item.NotificationId" class="btn btn-outline-success">Güncelle</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <a href="/AdminNotification/CreateNotification" class="btn btn-outline-primary col-12" >Yeni Bildirim Oluştur</a>
+        </div>
+    </div>
+</div>

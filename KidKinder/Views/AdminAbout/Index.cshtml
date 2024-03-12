@@ -1,0 +1,46 @@
+﻿﻿@model KidKinder.Entities.About
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 1;
+}
+
+<div class="card">
+    <div class="card-header">
+        <h5>Hakkımızda Bilgileri</h5>
+        <span>Hakkımızda ile ilgili ekleme, silme, güncelle gibi işlemleri aşağıdan gerçekleştirebilirsiniz.</span>
+        <span><b>Not: </b>Tema bütünlüğü sağlanması için sadece güncelleme işlemi yapılabilmektedir..</span>
+
+    </div>
+    <div class="card-block table-border-style">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Başlık</th>
+                        <th>Alt Başlık</th>
+                        <th>Büyük Resim</th>
+                        <th>Küçük Resim</th>
+                        <th>Açıklama</th>
+                        <th>Güncelle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">@count</th>
+                        <td>@Model.Header</td>
+                        <td>@Model.Title</td>
+                        <td>@Model.BigImageUrl</td>
+                        <td>@Model.SmallImageUrl</td>
+                        <td>@Model.Description</td>
+                        <td><a href="/AdminAbout/UpdateAbout/@Model.AboutId" class="btn btn-outline-success">Güncelle</a></td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

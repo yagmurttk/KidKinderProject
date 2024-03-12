@@ -31,8 +31,10 @@
 
                         <tr>
                             <th scope="row">@count</th>
+                            <td>@item.BookASeatId</td>
                             <td>@item.Name</td>
                             <td>@item.Mail</td>
+                            <td>@item.ClassRoom.Title</td>
                             <td><a href="/AdminBookASeat/UpdateBookASeat/@item.BookASeatId" class="btn btn-outline-success">Güncelle</a></td>
                             <td><a href="/AdminBookASeat/DeleteBookASeat/@item.BookASeatId" class="btn btn-outline-danger">Sil</a></td>
                         </tr>

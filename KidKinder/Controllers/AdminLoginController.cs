@@ -9,7 +9,7 @@ using System.Web.Security;
 
 namespace KidKinder.Controllers
 {
-    [AllowAnonymous]
+    
     public class AdminLoginController : Controller
     {
         KidKinderContext context = new KidKinderContext();
@@ -26,7 +26,7 @@ namespace KidKinder.Controllers
             {
                 FormsAuthentication.SetAuthCookie(admin.Username, false);
                 Session["Username"] = result.Username;
-                return RedirectToAction("Index", "Dashboard");
+                return RedirectToAction("Index", "AdminDashboard");
             }
             else
             {

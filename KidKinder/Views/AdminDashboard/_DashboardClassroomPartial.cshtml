@@ -1,0 +1,15 @@
+﻿﻿@model List<KidKinder.Entities.ClassRoom>
+
+<!-- sale card start -->
+@foreach (var item in Model)
+{
+    <div class="col-md-6">
+        <div class="card text-center order-visitor-card">
+            <div class="card-block">
+                <h6 class="m-b-0">@item.Title</h6>
+                <h4 class="m-t-15 m-b-15"><i class="fa fa-clipboard m-r-15 "></i></h4>
+                <p>@item.Description</p>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,21 @@
+﻿﻿@model KidKinder.Entities.Branch
+
+@{
+    ViewBag.Title = "CreateBranch";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h5>Yeni Branş Ekleme Sayfası</h5>
+    </div>
+    <div class="card-block">
+        <form class="form-material" method="post">
+            <div class="form-group form-default">
+                <input type="text" name="Name" placeholder="Branş Adı" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-outline-primary">Branşı Kaydet</button>
+        </form>
+    </div>
+</div>
