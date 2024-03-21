@@ -132,11 +132,16 @@
     <Compile Include="Controllers\AdminAboutController.cs" />
     <Compile Include="Controllers\AdminBookASeatController.cs" />
     <Compile Include="Controllers\AdminBranchController.cs" />
+    <Compile Include="Controllers\AdminClassroomController.cs" />
     <Compile Include="Controllers\AdminDashboardController.cs" />
+    <Compile Include="Controllers\AdminFeatureController.cs" />
+    <Compile Include="Controllers\AdminGaleriController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
     <Compile Include="Controllers\AdminLoginController.cs" />
     <Compile Include="Controllers\AdminNotificationController.cs" />
+    <Compile Include="Controllers\AdminServiceController.cs" />
     <Compile Include="Controllers\AdminTeacherController.cs" />
+    <Compile Include="Controllers\AdminTestimonialController.cs" />
     <Compile Include="Controllers\BookASeatController.cs" />
     <Compile Include="Controllers\ClassRoomController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -166,6 +171,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\CreateClassroomViewModel.cs" />
+    <Compile Include="Models\UpdateClassroomViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -680,10 +687,23 @@
     <Content Include="Views\AdminNotification\UpdateNotification.cshtml" />
     <Content Include="Views\AdminAbout\Index.cshtml" />
     <Content Include="Views\AdminAbout\UpdateAbout.cshtml" />
+    <Content Include="Views\AdminService\Index.cshtml" />
+    <Content Include="Views\AdminService\CreateService.cshtml" />
+    <Content Include="Views\AdminService\UpdateService.cshtml" />
+    <Content Include="Views\AdminClassroom\ClassroomList.cshtml" />
+    <Content Include="Views\AdminClassroom\CreateClassroom.cshtml" />
+    <Content Include="Views\AdminClassroom\UpdateClassroom.cshtml" />
+    <Content Include="Views\AdminFeature\Index.cshtml" />
+    <Content Include="Views\AdminFeature\UpdateFeature.cshtml" />
+    <Content Include="Views\AdminGaleri\Index.cshtml" />
+    <Content Include="Views\AdminGaleri\CreateImage.cshtml" />
+    <Content Include="Views\AdminGaleri\UpdateImage.cshtml" />
+    <Content Include="Views\AdminTestimonial\Index.cshtml" />
+    <Content Include="Views\AdminTestimonial\UpdateTestimonial.cshtml" />
+    <Content Include="Views\AdminTestimonial\CreateTestimonial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -1,0 +1,46 @@
+﻿﻿@model KidKinder.Models.CreateClassroomViewModel
+
+@{
+    ViewBag.Title = "CreateClassroom";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h5>Yeni Sınıf Girişi</h5>
+    </div>
+    <div class="card-block">
+        <form class="form-material" method="post">
+
+            <div class="form-group form-default">
+                <input type="text" name="Title" placeholder="Sınıf Adı" class="form-control">
+                @Html.ValidationMessageFor(x => x.Title, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group form-default">
+                <input type="text" name="AgeOfKids" placeholder="Yaş Aralığı" class="form-control">
+                @Html.ValidationMessageFor(x => x.AgeOfKids, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group form-default">
+                <input type="text" name="TotalSeats" placeholder="Kapasite" class="form-control">
+                @Html.ValidationMessageFor(x => x.TotalSeats, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group form-default">
+                <input type="text" name="ClassTime" placeholder="Çalışma Saatleri" class="form-control">
+                @Html.ValidationMessageFor(x => x.ClassTime, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group form-default">
+                <input type="text" name="Price" placeholder="Fiyat" class="form-control">
+                @Html.ValidationMessageFor(x => x.Price, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group form-default">
+                <input type="text" name="ImageUrl" placeholder="Resim" class="form-control">
+                @Html.ValidationMessageFor(x => x.ImageUrl, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group form-default">
+                @Html.TextAreaFor(x => x.Description, 10, 10, new { @class = "form-control", placeholder = "Açıklama" })
+                @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
+            </div>
+            <button type="submit" class="btn btn-outline-primary col-12">Sınıfı Kaydet</button>
+        </form>
+    </div>
+</div>

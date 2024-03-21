@@ -144,4 +144,51 @@
         </div>
     </div>
     @Html.Action("_DashboardTeacherPartial")
+    <div class="col-xl-12">
+        <div id="chart-container" class="card proj-progress-card">
+            <div class="card-block">
+                <div class="row">
+
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                    <script type="text/javascript">
+                                        google.charts.load("current", { packages: ["corechart"] });
+                                        google.charts.setOnLoadCallback(drawChart);
+                                        function drawChart() {
+
+                                            var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Sınıf Adı');
+    data.addColumn('number', 'Koltuk Sayısı');
+
+    var totalSeatsData = @Html.Raw(Json.Encode(ViewBag.TotalSeatsData));
+
+    totalSeatsData.forEach(function(item) {
+        data.addRow([item.ClassName, item.TotalSeats]);
+    });
+
+
+
+                                            var options = {
+                                                title: 'Sınıfların tercih edilme oranları',
+                                                is3D: true,
+                                            };
+
+                                            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+                                            chart.draw(data, options);
+                                        }
+                    </script>
+
+                    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+
+                    <style>
+                        #chart-container {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+

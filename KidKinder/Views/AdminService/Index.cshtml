@@ -1,0 +1,44 @@
+﻿﻿@model List<KidKinder.Entities.Service>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h5>Hizmetler Listesi</h5>
+        <span>Hizmetler ile ilgili ekleme, silme, güncelle gibi işlemleri aşağıdan gerçekleştirebilirsiniz.</span>
+    </div>
+    <div class="card-block table-border-style">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Hizmet</th>
+                        <th>Açıklama</th>
+                        <th>Icon</th>
+                        <th>Güncelle</th>
+                        <th>Sil</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <th scope="row">@item.ServiceId</th>
+                        <td>@item.Title</td>
+                        <td>@item.Description</td>
+                        <td>@item.IconUrl</td>
+                        <td><a href="/AdminService/UpdateService/@item.ServiceId" class="btn btn-outline-success">Güncelle</a></td>
+                        <td><a href="/AdminService/RemoveService/@item.ServiceId" class="btn btn-outline-danger">Sil</a></td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+            <a href="/AdminService/CreateService/" class="btn btn-outline-primary col-12">Yeni Hizmet Girişi</a>
+        </div>
+    </div>
+</div>

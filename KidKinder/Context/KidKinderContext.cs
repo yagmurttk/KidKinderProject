@@ -25,5 +25,6 @@ namespace KidKinder.Context
         public DbSet<Notification> Notifications { get; set; }
         public DbSet<Gallery> Galleries { get; set; }
         public DbSet<Branch> Branches { get; set; }
+        public object Title { get; internal set; }
     }
 }

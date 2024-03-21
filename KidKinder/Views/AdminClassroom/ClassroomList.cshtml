@@ -1,0 +1,64 @@
+﻿﻿@model List<KidKinder.Entities.ClassRoom>
+
+@{
+    ViewBag.Title = "ClassroomList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h5>Sınıf Listesi</h5>
+        <span>Sınıflar ile ilgili ekleme, silme, güncelle gibi işlemleri aşağıdan gerçekleştirebilirsiniz.</span>
+
+    </div>
+    <div class="card-block table-border-style">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Sınıf Adı</th>
+                        <th>Fiyat</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                        <th>Detaylar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <th scope="row">@item.ClassRoomId</th>
+                            <td>@item.Title</td>
+                            <td>@item.Price</td>
+                            <td><a href="/AdminClassroom/RemoveClassroom/@item.ClassRoomId" class="btn btn-outline-danger">Sil</a></td>
+                            <td><a href="/AdminClassroom/UpdateClassroom/@item.ClassRoomId" class="btn btn-outline-success">Güncelle</a></td>
+                            <td><button type="button" data-toggle="modal" data-target="#Modal1-@item.ClassRoomId" class="btn btn-outline-dark">Detaylar</button></td>
+                        </tr>
+                        <div class="modal" id="Modal1-@item.ClassRoomId" tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">@item.Title</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>@item.Description</p>
+                                        <p><b>Yaş Aralığı: </b>@item.AgeOfKids</p>
+                                        <p><strong>Sınıf Kapasite: </strong>@item.TotalSeat</p>
+                                        <p><strong>Çalışma Saatleri: </strong>@item.ClassTime</p>
+                                        <p><strong>Fiyat: </strong>@item.Price</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Kapat</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </tbody>
+            </table>
+            <a href="/AdminClassroom/CreateClassroom/" class="btn btn-outline-primary col-12">Yeni Sınıf Ekle</a>
+        </div>
+    </div>
+</div>

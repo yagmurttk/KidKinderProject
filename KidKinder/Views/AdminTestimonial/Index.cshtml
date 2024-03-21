@@ -1,0 +1,60 @@
+﻿﻿@model List<KidKinder.Entities.Testimonial>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h5>Düşünceler Listesi</h5>
+        <span>Düşünceler ile ilgili ekleme, silme, güncelle gibi işlemleri aşağıdan gerçekleştirebilirsiniz.</span>
+
+    </div>
+    <div class="card-block table-border-style">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Ad Soyad</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                        <th>Detaylar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <th scope="row">@item.TestimonialId</th>
+                            <td><img src="@item.ImageUrl" class="img-thumbnail rounded-pill mr-3" style="width:75px; height:75px;" />@item.NameSurname</td>
+                            <td><a href="/AdminTestimonial/RemoveTestimonial/@item.TestimonialId" class="btn btn-outline-danger">Sil</a></td>
+                            <td><a href="/AdminTestimonial/UpdateTestimonial/@item.TestimonialId" class="btn btn-outline-success">Güncelle</a></td>
+                            <td><button type="button" data-toggle="modal" data-target="#Modal1-@item.TestimonialId" class="btn btn-outline-dark">Detaylar</button></td>
+                        </tr>
+                        <div class="modal" id="Modal1-@item.TestimonialId" tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title"><img src="@item.ImageUrl" class="img-thumbnail rounded-pill mr-3" style="width:75px; height:75px;" /> @item.NameSurname</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <hr />
+                                        <p>@item.Comment</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </tbody>
+            </table>
+            <a href="/AdminTestimonial/CreateTestimonial/" class="btn btn-outline-primary col-12">Yeni Yorum Girişi</a>
+        </div>
+    </div>
+</div>
+

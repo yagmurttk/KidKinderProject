@@ -1,0 +1,40 @@
+﻿@model List<KidKinder.Entities.Gallery>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h5>Galeri Listesi</h5>
+        <span>Galeri ile ilgili işlemleri aşağıdan gerçekleştirebilirsiniz.</span>
+
+    </div>
+    <div class="card-block table-border-style">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Resim Yolu</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <th scope="row">@item.GalleryId</th>
+                            <td>@item.ImageUrl</td>
+                            <td><a href="/AdminGaleri/RemoveGallery/@item.GalleryId" class="btn btn-danger">Sil</a></td>
+                            <td><a href="/AdminGaleri/UpdateImage/@item.GalleryId" class="btn btn-success">Güncelle</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <a href="/AdminGaleri/CreateImage/" class="btn btn-primary">Resim Ekle</a>
+        </div>
+    </div>
+</div>

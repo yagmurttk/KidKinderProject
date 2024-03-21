@@ -1,0 +1,21 @@
+﻿@model KidKinder.Entities.Gallery
+
+@{
+    ViewBag.Title = "UpdateImage";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h5>Resim Güncelleme Sayfası</h5>
+    </div>
+    <div class="card-block">
+        <form class="form-material" method="post">
+            <input type="hidden" value="@Model.GalleryId" name="GalleryId" />
+            <div class="form-group form-default">
+                <input type="text" name="ImageUrl" placeholder="Resim Yolu" value="@Model.ImageUrl" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Resmi Güncelle</button>
+        </form>
+    </div>
+</div>

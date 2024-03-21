@@ -32,6 +32,24 @@ namespace KidKinder.Controllers
             ViewBag.TotalMessage = context.Contacts.Count();
             ViewBag.AdminCount = context.Admins.Count();
             ViewBag.RezCount = context.BookASeats.Count();
+
+            //Chart
+            var totalSeatsData = context.ClassRooms
+                           .Select(x => new { ClassName = x.Title, TotalSeats = x.TotalSeat })
+                           .ToList();
+
+            ViewBag.TotalSeatsData = totalSeatsData;
+
+
+            ViewBag.Comment = context.Testimonials.Count().ToString();
+            ViewBag.picture = context.Galleries.Count().ToString();
+            ViewBag.branch = context.Branches.Count().ToString();
+            ViewBag.service = context.Services.Count().ToString();
+            ViewBag.message = context.Contacts.Count().ToString();
+            ViewBag.subscribes = context.MailSubscribes.Count().ToString();
+            ViewBag.teacher = context.Teachers.Count().ToString();
+            ViewBag.Classs = context.ClassRooms.Count().ToString();
+
             return View();
         }
         public PartialViewResult _DashboardTeacherPartial()
