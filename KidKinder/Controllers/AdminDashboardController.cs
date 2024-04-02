@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace KidKinder.Controllers
 {
-
+    [Authorize]
     public class AdminDashboardController : Controller
     {
         KidKinderContext context = new KidKinderContext();

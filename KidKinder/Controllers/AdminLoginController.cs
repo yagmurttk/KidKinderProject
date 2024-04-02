@@ -9,7 +9,7 @@ using System.Web.Security;
 
 namespace KidKinder.Controllers
 {
-    
+    [AllowAnonymous]
     public class AdminLoginController : Controller
     {
         KidKinderContext context = new KidKinderContext();
@@ -33,6 +33,12 @@ namespace KidKinder.Controllers
                 ModelState.AddModelError("", "Kullanıcı adı veya şifre hatalı!!");
                 return View(admin);
             }
+
+        }
+        public ActionResult SignOut()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("AdminLogin", "AdminLogin");
         }
     }
 }

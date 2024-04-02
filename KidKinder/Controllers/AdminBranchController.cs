@@ -8,7 +8,6 @@ using System.Web.Mvc;
 
 namespace KidKinder.Controllers
 {
-    [AllowAnonymous]
     public class AdminBranchController : Controller
     {
         KidKinderContext context = new KidKinderContext();

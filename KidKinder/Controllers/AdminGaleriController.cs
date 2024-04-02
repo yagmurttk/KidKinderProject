@@ -22,7 +22,22 @@ namespace KidKinder.Controllers
         [HttpPost]
         public ActionResult CreateImage(Gallery model)
         {
+            model.Status = false;
             context.Galleries.Add(model);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult ImageChangeStatusTrue(int id)
+        {
+            var value = context.Galleries.Find(id);
+            value.Status = true;
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult ImageChangeStatusFalse(int id)
+        {
+            var value = context.Galleries.Find(id);
+            value.Status = false;
             context.SaveChanges();
             return RedirectToAction("Index");
         }

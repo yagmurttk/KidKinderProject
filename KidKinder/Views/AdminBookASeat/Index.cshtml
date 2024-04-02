@@ -3,7 +3,6 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
-    int count = 0;
 }
 
 <div class="card">
@@ -27,10 +26,7 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-                        count++;
-
                         <tr>
-                            <th scope="row">@count</th>
                             <td>@item.BookASeatId</td>
                             <td>@item.Name</td>
                             <td>@item.Mail</td>
@@ -38,7 +34,6 @@
                             <td><a href="/AdminBookASeat/UpdateBookASeat/@item.BookASeatId" class="btn btn-outline-success">Güncelle</a></td>
                             <td><a href="/AdminBookASeat/DeleteBookASeat/@item.BookASeatId" class="btn btn-outline-danger">Sil</a></td>
                         </tr>
-
                     }
                 </tbody>
             </table>

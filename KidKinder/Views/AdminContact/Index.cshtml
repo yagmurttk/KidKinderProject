@@ -1,0 +1,69 @@
+﻿﻿@model List<KidKinder.Entities.Contact>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        <h5>Mesaj Bilgileri</h5>
+        <span>Mesajlar ile ilgili ekleme, silme gibi işlemleri aşağıdan gerçekleştirebilirsiniz.</span>
+    </div>
+    <div class="card-block table-border-style">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Adı Soyadı</th>
+                        <th>Konu</th>
+                        <th>Tarih</th>
+                        <th>Durum</th>
+                        <th>Sil</th>
+                        <th>Detaylar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <th scope="row">@item.ContactId</th>
+                            <td>@item.NameSurname</td>
+                            <td>@item.Subject</td>
+                            <td>@item.SendDate.ToShortDateString()</td>
+
+                            @if (item.IsRead)
+                            {
+                                <td><span class="badge badge-success">Okundu</span></td>
+                            }
+                            else
+                            {
+                                <td><span class="badge badge-danger">Okunmadı</span></td>
+                            }
+                            <td><a href="/AdminContact/RemoveContact/@item.ContactId" class="btn btn-outline-danger">Sil</a></td>
+                            <td><button data-toggle="modal" data-target="#Modal-@item.ContactId" class="btn btn-outline-dark">Detaylar</button></td>
+                        </tr>
+                        <div class="modal" id="Modal-@item.ContactId" tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">@item.NameSurname</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Email:@item.Email</p>
+                                        <p>Konu:@item.Subject</p>
+                                        <p>Tarih:@item.SendDate.ToShortDateString()</p>
+                                        <p>Mesaj:@item.Message</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Kapat</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

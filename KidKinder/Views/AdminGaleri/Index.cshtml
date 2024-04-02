@@ -18,7 +18,9 @@
                     <tr>
                         <th>#</th>
                         <th>Resim Yolu</th>
-                        <th>Sil</th>
+                        <th>Durum</th>
+                        <th>Aktif Yap</th>
+                        <th>Pasif Yap</th>
                         <th>Güncelle</th>
                     </tr>
                 </thead>
@@ -28,9 +30,20 @@
                         <tr>
                             <th scope="row">@item.GalleryId</th>
                             <td>@item.ImageUrl</td>
-                            <td><a href="/AdminGaleri/RemoveGallery/@item.GalleryId" class="btn btn-outline-danger">Sil</a></td>
+                            @if (item.Status)
+                            {
+                                <td><span class="badge badge-success">Aktif</span></td>
+                            }
+                            else
+                            {
+                                <td><span class="badge badge-danger">Pasif</span></td>
+                            }
+                            <td><a href="/AdminGaleri/ImageChangeStatusTrue/@item.GalleryId" class="btn btn-outline-info">Aktif Yap</a></td>
+                            <td><a href="/AdminGaleri/ImageChangeStatusFalse/@item.GalleryId" class="btn btn-outline-danger">Pasif Yap</a></td>
                             <td><a href="/AdminGaleri/UpdateImage/@item.GalleryId" class="btn btn-outline-success">Güncelle</a></td>
+
                         </tr>
+
                     }
                 </tbody>
             </table>

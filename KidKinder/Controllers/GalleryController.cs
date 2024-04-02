@@ -17,7 +17,7 @@ namespace KidKinder.Controllers
         }
         public PartialViewResult GalleryPartial()
         {
-            var values = context.Galleries.ToList();
+            var values = context.Galleries.Where(x => x.Status == true).Take(6).ToList();
             return PartialView(values);
         }
     }

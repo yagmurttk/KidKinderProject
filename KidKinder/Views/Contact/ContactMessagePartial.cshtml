@@ -1,48 +1,45 @@
-﻿<div class="col-lg-7 mb-5">
+﻿﻿@model KidKinder.Models.SendMessageViewModel
+
+<div class="col-lg-7 mb-5">
     <div class="contact-form">
         <div id="success"></div>
-        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+        <form method="post" action="/Contact/SendMessage/">
             <div class="control-group">
                 <input type="text"
+                       name="NameSurname"
                        class="form-control"
-                       id="name"
-                       placeholder="Adınız"
-                       required="required"
-                       data-validation-required-message="Lütfen adınızı giriniz" />
+                       placeholder="Adınız" />
                 <p class="help-block text-danger"></p>
             </div>
             <div class="control-group">
                 <input type="email"
                        class="form-control"
                        id="email"
-                       placeholder="Mail Adresiniz"
-                       required="required"
-                       data-validation-required-message="Lütfen mail adresinizi giriniz" />
+                       name="Email"
+                       placeholder="Email" />
                 <p class="help-block text-danger"></p>
             </div>
             <div class="control-group">
                 <input type="text"
                        class="form-control"
                        id="subject"
-                       placeholder="Konu"
-                       required="required"
-                       data-validation-required-message="Lütfen konu giriniz" />
+                       name="Subject"
+                       placeholder="Konu" />
                 <p class="help-block text-danger"></p>
             </div>
             <div class="control-group">
                 <textarea class="form-control"
                           rows="6"
+                          name="Message"
                           id="message"
-                          placeholder="Mesajınız"
-                          required="required"
-                          data-validation-required-message="Lütfen mesaj alanını boş bırakmayınız"></textarea>
+                          placeholder="Mesaj"></textarea>
                 <p class="help-block text-danger"></p>
             </div>
             <div>
                 <button class="btn btn-primary py-2 px-4"
                         type="submit"
                         id="sendMessageButton">
-                    Gönder
+                    Mesaj Gönder
                 </button>
             </div>
         </form>

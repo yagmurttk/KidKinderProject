@@ -133,6 +133,7 @@
     <Compile Include="Controllers\AdminBookASeatController.cs" />
     <Compile Include="Controllers\AdminBranchController.cs" />
     <Compile Include="Controllers\AdminClassroomController.cs" />
+    <Compile Include="Controllers\AdminContactController.cs" />
     <Compile Include="Controllers\AdminDashboardController.cs" />
     <Compile Include="Controllers\AdminFeatureController.cs" />
     <Compile Include="Controllers\AdminGaleriController.cs" />
@@ -170,8 +171,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202403291257135_mig1.cs" />
+    <Compile Include="Migrations\202403291257135_mig1.designer.cs">
+      <DependentUpon>202403291257135_mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404021152133_mig2.cs" />
+    <Compile Include="Migrations\202404021152133_mig2.designer.cs">
+      <DependentUpon>202404021152133_mig2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CreateClassroomViewModel.cs" />
+    <Compile Include="Models\SendMessageViewModel.cs" />
     <Compile Include="Models\UpdateClassroomViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -701,6 +711,7 @@
     <Content Include="Views\AdminTestimonial\Index.cshtml" />
     <Content Include="Views\AdminTestimonial\UpdateTestimonial.cshtml" />
     <Content Include="Views\AdminTestimonial\CreateTestimonial.cshtml" />
+    <Content Include="Views\AdminContact\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -717,6 +728,14 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202403291257135_mig1.resx">
+      <DependentUpon>202403291257135_mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404021152133_mig2.resx">
+      <DependentUpon>202404021152133_mig2.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

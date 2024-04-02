@@ -1,4 +1,6 @@
 ﻿using KidKinder.Context;
+using KidKinder.Entities;
+using KidKinder.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +32,29 @@ namespace KidKinder.Controllers
         public PartialViewResult ContactMessagePartial()
         {
             return PartialView();
+        }
+        [HttpPost]
+        public ActionResult SendMessage(SendMessageViewModel contact)
+        {
+            if (ModelState.IsValid)
+            {
+                var value = new Contact()
+                {
+                    Email = contact.Email,
+                    IsRead = false,
+                    Message = contact.Email,
+                    NameSurname = contact.NameSurname,
+                    SendDate = DateTime.Now,
+                    Subject = contact.Subject
+                };
+                context.Contacts.Add(value);
+                context.SaveChanges();
+                return RedirectToAction("Index", "Default");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Contact");
+            }
         }
     }
 }
