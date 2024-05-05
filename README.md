@@ -22,6 +22,8 @@ Site ile ilgili İstatistikler
 ![ADMİN DASHBOARD](https://github.com/yagmurttk/KidKinderProject/assets/126063227/fe72afa9-285c-42f9-af1e-bf87c4077d5f)
 ## Admin Branşlar Sayfası
 ![ADMİN BRANŞLAR](https://github.com/yagmurttk/KidKinderProject/assets/126063227/6e9d0768-3594-4c1a-ae33-11d9c7f87ced)
+## 404 Sayfası
+![404](https://github.com/yagmurttk/KidKinderProject/assets/126063227/0b6a6591-7ff9-409a-a31c-50dcd1525b06)
 ## Admin Bildirimler Sayfası
 ![ADMİN NOTİFİCATİON](https://github.com/yagmurttk/KidKinderProject/assets/126063227/55c037fd-d500-49a5-bc07-41895ae7065f)
 ## Admin Sınıflar Sayfası
